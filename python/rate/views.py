@@ -4,4 +4,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Rate my class")
+    return render(request, "rate/index.html")
+
+def course(request, coursename):
+    return render(request, "rate/course.html", {
+        "course": coursename.upper()
+    })
