@@ -16,6 +16,7 @@ def course(request, coursename):
     output = {}
     for review in reviews:
         if review['coursename'] == coursename:
+            print(review)
             output[review['username']] = review['rating']
 
     return render(request, "rate/course.html", {
